@@ -20,7 +20,7 @@ namespace CNS_Tap_Test
 
         private SQLiteConnection mConnectDB = new SQLiteConnection($"Data Source = {DBpath};Version = 3");
         private string mQuery;
-        private DateTime now = DateTime.Now;
+        private DateTime mNow = DateTime.Now;
         public Graph()
         {
             InitializeComponent();
@@ -32,7 +32,7 @@ namespace CNS_Tap_Test
         {
             try
             {
-                InsertTapData(now, tapCount);
+                InsertTapData(mNow.ToString("F"), tapCount);
                 string test = SelectTapData();
                 textBox1.Text = test;
                 
@@ -44,7 +44,7 @@ namespace CNS_Tap_Test
         }
 
 
-        private void InsertTapData(DateTime Daily, string tap)
+        private void InsertTapData(string Daily, string tap)
         {
             mQuery = "INSERT INTO RECORD(date, dayRecord) VALUES(@Daily, @tap)";
             using(SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB)) 
@@ -56,7 +56,7 @@ namespace CNS_Tap_Test
         }
         private void CreateTable()
         {
-            mQuery = "CREATE TABLE IF NOT EXISTS RECORD(date DATETIME, dayRecord STRING)";
+            mQuery = "CREATE TABLE IF NOT EXISTS RECORD(date STRING, dayRecord STRING)";
             using(SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
             {
                 command.ExecuteNonQuery();
@@ -66,18 +66,20 @@ namespace CNS_Tap_Test
         {
             StringBuilder record = new StringBuilder();
             mQuery = "SELECT dayRecord FROM RECORD";
-            using(SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
             {
-                using(SQLiteDataReader reader = command.ExecuteReader())
+                using (SQLiteDataReader reader = command.ExecuteReader())
                 {
                     while (reader.Read())
                     {
-                        record.Append($"{reader}\n");
+                        record.AppendLine($"{reader["dayRecord"]}");
                     }
                 }
                 return record.ToString();
             }
+            
         }
+        
         private void OpenDB()
         {
             mConnectDB.Open();
