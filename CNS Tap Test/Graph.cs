@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SQLite;
+using System.IO;
+using IWshRuntimeLibrary;
 
 namespace CNS_Tap_Test
 {
@@ -17,16 +19,23 @@ namespace CNS_Tap_Test
         //일별 주간별 월별 데이터 시각화 //시간별은 애매 //월요일에 일별 띄우고 // 1일엔 월별 띄우기
         // 경로
         private static string DBpath = "../../TapTestData.db";
-
         private SQLiteConnection mConnectDB = new SQLiteConnection($"Data Source = {DBpath};Version = 3");
         private string mQuery;
         private DateTime mNow = DateTime.Now;
+
+        //바로가기
+        private static string DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+        DirectoryInfo Desktop = new DirectoryInfo(DesktopPath);
+        private static string LinkFileName = DesktopPath.ToString() + @"\Tap_Test 바로가기.lnk";
+        FileInfo LinkFile = new FileInfo(LinkFileName);
+
+        
         public Graph()
         {
             InitializeComponent();
+            GotoIcon();
             OpenDB();
             CreateTable();
-
         }
         public void Visualization(string tapCount)
         {
@@ -83,6 +92,31 @@ namespace CNS_Tap_Test
         private void OpenDB()
         {
             mConnectDB.Open();
+        }
+
+        private void GotoIcon()
+        {
+            if(LinkFile.Exists)
+            {
+                return;
+            }
+            try
+            {
+                //바로가기 생성
+                WshShell wshShell = new WshShell();
+                IWshShortcut Link = wshShell.CreateShortcut(LinkFile.FullName);
+
+                //원본 파일 경로
+                StringBuilder originPath = new StringBuilder();
+                originPath.Append(Environment.GetFolderPath(Environment.SpecialFolder.ProgramFiles));
+                originPath.Append(@"\CNS Tap Test.exe");
+                Link.TargetPath = originPath.ToString();
+                Link.Save();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 
