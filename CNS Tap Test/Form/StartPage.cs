@@ -22,7 +22,7 @@ namespace CNS_Tap_Test
             //start_btn.BackColor = Color.Transparent;
             //start_btn.FlatAppearance.MouseDownBackColor = Color.Transparent;
             //start_btn.FlatAppearance.MouseOverBackColor = Color.Transparent;
-            start_picbox.Load(@"C:\Users\user\Desktop\logo.png");
+            start_picbox.Load(@"D:\CNS_Tap\Library\CNS Tap Test\CNS Tap Test\logo.png");
             start_picbox.SizeMode = PictureBoxSizeMode.StretchImage;
             start_picbox.Click += new EventHandler(MovePage);
         }
