@@ -16,7 +16,7 @@ namespace CNS_Tap_Test
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TapTest());
+            Application.Run(new StartPage());
         }
     }
 }

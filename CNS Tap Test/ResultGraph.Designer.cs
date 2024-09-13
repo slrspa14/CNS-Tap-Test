@@ -1,6 +1,6 @@
 ﻿namespace CNS_Tap_Test
 {
-    partial class Graph
+    partial class ResultGraph
     {
         /// <summary>
         /// Required designer variable.

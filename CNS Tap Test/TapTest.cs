@@ -3,12 +3,22 @@ using System.Windows.Forms;
 
 namespace CNS_Tap_Test
 {
+    //폼 간 화면 자유롭게 이동하기
+    //시작 화면
+    //회원 가입
+    //로그인 화면
+    //메뉴 화면
+    //기록 확인 화면
+    //탭 화면
+    //탭 결과 확인 화면
+
     //회원가입, 로그인 기능 업데이트하기 나중에
+
     public partial class TapTest : Form
     {
         private int click = 0;
         private int setTime = 10;
-        private Graph graphForm = new Graph();
+        private ResultGraph graphForm = new ResultGraph();
         public TapTest()
         {
             InitializeComponent();
@@ -43,6 +53,7 @@ namespace CNS_Tap_Test
                 this.Visible = false;
                 graphForm.Visualization(click.ToString());
                 graphForm.ShowDialog();
+                this.Close();
             }    
         }
     }
