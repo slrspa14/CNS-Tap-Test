@@ -22,6 +22,7 @@ namespace CNS_Tap_Test
         private void join_btn_Click(object sender, EventArgs e)
         {
             //회원가입
+            
         }
 
         private void Login_btn_Click(object sender, EventArgs e)
