@@ -12,6 +12,9 @@ namespace CNS_Tap_Test
 {
     public partial class LogINPage : Form
     {
+        //ID, PW 일치 불일치 확인
+        //디자인
+        
         public LogINPage()
         {
             InitializeComponent();

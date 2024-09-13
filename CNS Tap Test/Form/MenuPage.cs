@@ -13,6 +13,7 @@ namespace CNS_Tap_Test
     public partial class MenuPage : Form
     {
         //로그인, 회원가입 선택 메뉴
+        //크기 //AutoScale 활용해보기
         //디자인은 어떻게 하지
         public MenuPage()
         {

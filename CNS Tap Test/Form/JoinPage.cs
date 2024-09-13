@@ -12,6 +12,9 @@ namespace CNS_Tap_Test
 {
     public partial class JoinPage : Form
     {
+        //중복 확인
+        //디자인
+        
         public JoinPage()
         {
             InitializeComponent();

@@ -12,6 +12,8 @@ namespace CNS_Tap_Test
         //DB TABLE CREATE, INSERT, SELECT, LOAD
         //DB OPEN, CLOSE
         //경로 지정 C로
+        //회원 테이블이 있고 기록 테이블 있고 기록 테이블에 컬럼을 id나 닉네임으로 회원 구분하기
+        
         private static string DBpath = "../../TapTestData.db";
         private static SQLiteConnection mConnectDB = new SQLiteConnection($"Data Source = {DBpath};Version = 3");
         private string mQuery;
@@ -19,24 +21,40 @@ namespace CNS_Tap_Test
         {
             mConnectDB.Open();
         }
-        public void InsertTapData(string Daily, string tap)
+        public void InsertTapData(string[] args)
         {
+            //아
             mQuery = "INSERT INTO RECORD(date, dayRecord) VALUES(@Daily, @tap)";
             using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
             {
-                command.Parameters.AddWithValue("@Daily", Daily);
-                command.Parameters.AddWithValue(@"tap", tap);
+                command.Parameters.AddWithValue("@Daily", args);
+                command.Parameters.AddWithValue(@"tap", args);
                 command.ExecuteNonQuery();
             }
         }
         public void CreateTable()
         {
-            mQuery = "CREATE TABLE IF NOT EXISTS RECORD(date STRING, dayRecord STRING)";
-            using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
-            {
-                command.ExecuteNonQuery();
-            }
+            //string[] createQry = { "CREATE TABLE IF NOT EXISTS RECORD(NICKNAME STRING, date STRING, dayRecord STRING)",
+            //                    "CREATE TABLE IF NOT EXISTS INFORMATION(ID STRING, PW STRING, NICKNAME STRING)"};
+            //using(var command = new SQLiteCommand(mConnectDB))
+            //{
+            //    foreach (var row in command.ExecuteReader())
+            //    {
+            //        command.ExecuteNonQuery();
+            //    }
+            //}
+            //mQuery = "CREATE TABLE IF NOT EXISTS RECORD(NICKNAME STRING, date STRING, dayRecord STRING)";
+            //using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            //{
+            //    command.ExecuteNonQuery();
+            //}
+            //mQuery = "CREATE TABLE IF NOT EXISTS INFORMATION(ID STRING, PW STRING, NICKNAME STRING)";
+            //using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            //{
+            //    command.ExecuteNonQuery();
+            //}
         }
+
         public string SelectTapData()
         {
             StringBuilder record = new StringBuilder();
