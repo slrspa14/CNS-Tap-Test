@@ -59,15 +59,5 @@ namespace CNS_Tap_Test.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
-        /// </summary>
-        internal static System.Drawing.Bitmap _20240831_대외비_SVI_WATCH_Eq_to_Eq_Interface_WFA____SVI_Rear {
-            get {
-                object obj = ResourceManager.GetObject("20240831_대외비_SVI_WATCH_Eq_to_Eq_Interface-WFA __ SVI Rear", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

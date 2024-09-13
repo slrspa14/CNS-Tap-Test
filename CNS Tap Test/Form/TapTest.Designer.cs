@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TapTest));
             this.btnTap = new System.Windows.Forms.Button();
             this.lblResult = new System.Windows.Forms.Label();
             this.timeTen = new System.Windows.Forms.Timer(this.components);
@@ -76,8 +77,9 @@
             this.Controls.Add(this.lblTimeLimit);
             this.Controls.Add(this.lblResult);
             this.Controls.Add(this.btnTap);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TapTest";
-            this.Text = "Form1";
+            this.Text = "Tap";
             this.ResumeLayout(false);
 
         }

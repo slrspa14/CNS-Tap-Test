@@ -28,9 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ResultGraph));
             this.ctDaily = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.entityCommand1 = new System.Data.Entity.Core.EntityClient.EntityCommand();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -39,17 +40,17 @@
             // 
             // ctDaily
             // 
-            chartArea2.Name = "ChartArea1";
-            this.ctDaily.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.ctDaily.Legends.Add(legend2);
+            chartArea1.Name = "ChartArea1";
+            this.ctDaily.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.ctDaily.Legends.Add(legend1);
             this.ctDaily.Location = new System.Drawing.Point(12, 99);
             this.ctDaily.Name = "ctDaily";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.ctDaily.Series.Add(series2);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.ctDaily.Series.Add(series1);
             this.ctDaily.Size = new System.Drawing.Size(348, 339);
             this.ctDaily.TabIndex = 0;
             this.ctDaily.Text = "chart1";
@@ -70,15 +71,16 @@
             this.textBox1.Size = new System.Drawing.Size(207, 247);
             this.textBox1.TabIndex = 1;
             // 
-            // Graph
+            // ResultGraph
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.ctDaily);
-            this.Name = "Graph";
-            this.Text = "Graph";
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Name = "ResultGraph";
+            this.Text = "ResultGraph";
             ((System.ComponentModel.ISupportInitialize)(this.ctDaily)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

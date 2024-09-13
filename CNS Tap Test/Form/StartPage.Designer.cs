@@ -28,20 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.start_btn = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartPage));
             this.start_picbox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.start_picbox)).BeginInit();
             this.SuspendLayout();
-            // 
-            // start_btn
-            // 
-            this.start_btn.BackColor = System.Drawing.Color.White;
-            this.start_btn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.start_btn.Location = new System.Drawing.Point(157, 111);
-            this.start_btn.Name = "start_btn";
-            this.start_btn.Size = new System.Drawing.Size(629, 329);
-            this.start_btn.TabIndex = 0;
-            this.start_btn.UseVisualStyleBackColor = false;
             // 
             // start_picbox
             // 
@@ -56,8 +46,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 441);
-            this.Controls.Add(this.start_btn);
             this.Controls.Add(this.start_picbox);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartPage";
             this.Text = "StartPage";
             ((System.ComponentModel.ISupportInitialize)(this.start_picbox)).EndInit();
@@ -66,8 +56,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button start_btn;
         private System.Windows.Forms.PictureBox start_picbox;
     }
 }
