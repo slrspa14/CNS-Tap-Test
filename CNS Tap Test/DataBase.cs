@@ -21,14 +21,25 @@ namespace CNS_Tap_Test
         {
             mConnectDB.Open();
         }
-        public void InsertTapData(string[] args)
+        public void InsertTapData(string Daily, string tap)
         {
             //아
             mQuery = "INSERT INTO RECORD(date, dayRecord) VALUES(@Daily, @tap)";
             using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
             {
-                command.Parameters.AddWithValue("@Daily", args);
-                command.Parameters.AddWithValue(@"tap", args);
+                command.Parameters.AddWithValue("@Daily", Daily);
+                command.Parameters.AddWithValue(@"tap", tap);
+                command.ExecuteNonQuery();
+            }
+        }
+        public void InsertJoinData(string UserID, string UserPW, string NickName)
+        {
+            mQuery = "INSERT INTO INFORMATION(ID, PW, NICKNAME) VALUES(@UserID, @UserPW, @NickName)";
+            using(SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            {
+                command.Parameters.AddWithValue("@UserID", UserID);
+                command.Parameters.AddWithValue("@UserPW", UserPW);
+                command.Parameters.AddWithValue("@NickName", NickName);
                 command.ExecuteNonQuery();
             }
         }

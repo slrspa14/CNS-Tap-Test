@@ -19,5 +19,9 @@ namespace CNS_Tap_Test
         {
             InitializeComponent();
         }
+        //send 버튼 이벤트
+        //중복 확인 함수
+        //ID만 확인할까 PW도 같이 확인할까
+        //
     }
 }
