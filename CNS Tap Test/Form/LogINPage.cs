@@ -19,5 +19,13 @@ namespace CNS_Tap_Test
         {
             InitializeComponent();
         }
+
+        private void LogINPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }

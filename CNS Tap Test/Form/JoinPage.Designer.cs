@@ -39,6 +39,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "JoinPage";
             this.Text = "Join";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.JoinPage_FormClosing);
             this.ResumeLayout(false);
 
         }

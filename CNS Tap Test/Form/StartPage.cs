@@ -40,6 +40,14 @@ namespace CNS_Tap_Test
             this.Hide();
             menuPage.Show();
         }
+
+        private void Form_Closing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
         //private void GotoIcon()
         //{
         //    if (LinkFile.Exists)

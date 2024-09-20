@@ -13,10 +13,13 @@ namespace CNS_Tap_Test
         //DB OPEN, CLOSE
         //경로 지정 C로
         //회원 테이블이 있고 기록 테이블 있고 기록 테이블에 컬럼을 id나 닉네임으로 회원 구분하기
-        
+
+
         private static string DBpath = "../../TapTestData.db";
         private static SQLiteConnection mConnectDB = new SQLiteConnection($"Data Source = {DBpath};Version = 3");
         private string mQuery;
+        private string mquery;
+
         public void OpenDB()
         {
             mConnectDB.Open();
@@ -45,26 +48,44 @@ namespace CNS_Tap_Test
         }
         public void CreateTable()
         {
-            //string[] createQry = { "CREATE TABLE IF NOT EXISTS RECORD(NICKNAME STRING, date STRING, dayRecord STRING)",
-            //                    "CREATE TABLE IF NOT EXISTS INFORMATION(ID STRING, PW STRING, NICKNAME STRING)"};
-            //using(var command = new SQLiteCommand(mConnectDB))
+            string[] queries = {
+        "CREATE TABLE IF NOT EXISTS RECORD(NICKNAME STRING, date STRING, dayRecord STRING)",
+        "CREATE TABLE IF NOT EXISTS INFORMATION(ID STRING, PW STRING, NICKNAME STRING)"
+            };
+
+            using (var command = new SQLiteCommand(mConnectDB))
+            {
+                foreach (var query in queries)
+                {
+                    command.CommandText = query;
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        //public void CreateTable()
+        //{
+
+            //string[] createqry = { "create table if not exists record(nickname string, date string, dayrecord string)",
+            //                    "create table if not exists information(id string, pw string, nickname string)"};
+            //using (var command = new SQLiteCommand(mconnectdb))
             //{
             //    foreach (var row in command.ExecuteReader())
             //    {
             //        command.ExecuteNonQuery();
             //    }
             //}
-            //mQuery = "CREATE TABLE IF NOT EXISTS RECORD(NICKNAME STRING, date STRING, dayRecord STRING)";
-            //using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            //mquery = "create table if not exists record(nickname string, date string, dayrecord string)";
+            //using (SQLiteCommand command = new SQLiteCommandSQLiteC(mquery, mconnectdb))
             //{
-            //    command.ExecuteNonQuery();
+            //    command.executenonquery();
             //}
-            //mQuery = "CREATE TABLE IF NOT EXISTS INFORMATION(ID STRING, PW STRING, NICKNAME STRING)";
-            //using (SQLiteCommand command = new SQLiteCommand(mQuery, mConnectDB))
+            //mquery = "create table if not exists information(id string, pw string, nickname string)";
+            //using (SQLiteCommand command = new SQLiteCommand(mquery, mconnectdb))
             //{
-            //    command.ExecuteNonQuery();
+            //    command.executenonquery();
             //}
-        }
+        //}
 
         public string SelectTapData()
         {

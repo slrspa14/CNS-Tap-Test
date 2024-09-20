@@ -19,6 +19,14 @@ namespace CNS_Tap_Test
         {
             InitializeComponent();
         }
+
+        private void JoinPage_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+        }
         //send 버튼 이벤트
         //중복 확인 함수
         //ID만 확인할까 PW도 같이 확인할까

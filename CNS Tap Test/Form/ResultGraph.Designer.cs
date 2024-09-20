@@ -81,6 +81,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ResultGraph";
             this.Text = "ResultGraph";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ResultGraph_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.ctDaily)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

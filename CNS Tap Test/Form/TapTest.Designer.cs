@@ -80,6 +80,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TapTest";
             this.Text = "Tap";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TapTest_FormClosing);
             this.ResumeLayout(false);
 
         }
