@@ -14,11 +14,14 @@ namespace CNS_Tap_Test
     {
         //중복 확인
         //디자인
-        
+        private string mGIFPath = "../test.gif";
         public JoinPage()
         {
             InitializeComponent();
+            join_page_image.Image = Image.FromFile(mGIFPath);
+
         }
+        
 
         private void JoinPage_FormClosing(object sender, FormClosingEventArgs e)
         {

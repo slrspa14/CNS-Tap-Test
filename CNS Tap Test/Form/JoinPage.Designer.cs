@@ -119,10 +119,11 @@
             // 
             // join_page_image
             // 
-            this.join_page_image.ErrorImage = ((System.Drawing.Image)(resources.GetObject("join_page_image.ErrorImage")));
+            this.join_page_image.ErrorImage = null;
             this.join_page_image.Location = new System.Drawing.Point(0, 0);
             this.join_page_image.Name = "join_page_image";
             this.join_page_image.Size = new System.Drawing.Size(397, 111);
+            this.join_page_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.join_page_image.TabIndex = 9;
             this.join_page_image.TabStop = false;
             // 

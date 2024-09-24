@@ -15,25 +15,39 @@ namespace CNS_Tap_Test
         //로그인, 회원가입 선택 메뉴
         //크기 //AutoScale 활용해보기
         //디자인은 어떻게 하지
-        public MenuPage()
+        private Form parentForm;
+
+        JoinPage joinPage = new JoinPage();
+        LogINPage logINPage = new LogINPage();
+        public MenuPage(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
         }
 
         private void join_btn_Click(object sender, EventArgs e)
         {
             //회원가입
             
+            this.Hide();
+            joinPage.Show();
+            
         }
 
         private void Login_btn_Click(object sender, EventArgs e)
         {
             //로그인
+            this.Hide();
+            logINPage.Show();
         }
 
         private void MenuPage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                parentForm.Close(); // 부모 폼도 함께 종료
+            }
+            else
             {
                 e.Cancel = true;
             }

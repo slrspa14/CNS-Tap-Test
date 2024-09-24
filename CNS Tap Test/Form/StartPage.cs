@@ -36,7 +36,7 @@ namespace CNS_Tap_Test
         }
         private void MovePage(object sender, EventArgs e)
         {
-            MenuPage menuPage = new MenuPage();
+            MenuPage menuPage = new MenuPage(this);
             this.Hide();
             menuPage.Show();
         }
