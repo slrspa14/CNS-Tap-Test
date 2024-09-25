@@ -9,6 +9,7 @@ namespace CNS_Tap_Test
     public partial class StartPage : Form
     {
         //바로가기
+        public static bool isClosing = false;
         private static string DesktopPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
         DirectoryInfo Desktop = new DirectoryInfo(DesktopPath);
         private static string LinkFileName = DesktopPath.ToString() + @"\Tap_Test 바로가기.lnk";
@@ -43,9 +44,21 @@ namespace CNS_Tap_Test
 
         private void Form_Closing(object sender, FormClosingEventArgs e)
         {
-            if(MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            //if(MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            //{
+            //    e.Cancel = true;
+            //}
+            if (!isClosing)
             {
-                e.Cancel = true;
+                if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    isClosing = true;
+                    this.Close(); // 부모 폼도 함께 종료
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
         }
         //private void GotoIcon()

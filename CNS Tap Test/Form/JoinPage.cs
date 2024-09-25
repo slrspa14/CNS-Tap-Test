@@ -14,10 +14,12 @@ namespace CNS_Tap_Test
     {
         //중복 확인
         //디자인
+        private Form parentForm;
         private string mGIFPath = "../test.gif";
-        public JoinPage()
+        public JoinPage(Form parentForm)
         {
             InitializeComponent();
+            this.parentForm = parentForm;
             join_page_image.Image = Image.FromFile(mGIFPath);
 
         }
@@ -25,9 +27,17 @@ namespace CNS_Tap_Test
 
         private void JoinPage_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.No)
+            if (!StartPage.isClosing)
             {
-                e.Cancel = true;
+                if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    StartPage.isClosing = true;
+                    parentForm.Close(); // 부모 폼도 함께 종료
+                }
+                else
+                {
+                    e.Cancel = true;
+                }
             }
         }
         //send 버튼 이벤트
