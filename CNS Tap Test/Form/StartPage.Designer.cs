@@ -37,7 +37,7 @@
             // 
             this.start_picbox.Location = new System.Drawing.Point(0, 0);
             this.start_picbox.Name = "start_picbox";
-            this.start_picbox.Size = new System.Drawing.Size(786, 440);
+            this.start_picbox.Size = new System.Drawing.Size(300, 500);
             this.start_picbox.TabIndex = 1;
             this.start_picbox.TabStop = false;
             // 
@@ -45,7 +45,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 441);
+            this.ClientSize = new System.Drawing.Size(299, 491);
             this.Controls.Add(this.start_picbox);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "StartPage";

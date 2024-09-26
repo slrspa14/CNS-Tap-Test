@@ -45,7 +45,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(73, 143);
+            this.label1.Location = new System.Drawing.Point(44, 141);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(16, 12);
             this.label1.TabIndex = 0;
@@ -54,7 +54,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(73, 216);
+            this.label2.Location = new System.Drawing.Point(44, 208);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(23, 12);
             this.label2.TabIndex = 1;
@@ -63,7 +63,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(73, 299);
+            this.label3.Location = new System.Drawing.Point(21, 276);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 12);
             this.label3.TabIndex = 2;
@@ -71,7 +71,7 @@
             // 
             // duplication_check_btn
             // 
-            this.duplication_check_btn.Location = new System.Drawing.Point(273, 138);
+            this.duplication_check_btn.Location = new System.Drawing.Point(215, 136);
             this.duplication_check_btn.Name = "duplication_check_btn";
             this.duplication_check_btn.Size = new System.Drawing.Size(75, 23);
             this.duplication_check_btn.TabIndex = 3;
@@ -80,28 +80,28 @@
             // 
             // idtext_txtbox
             // 
-            this.idtext_txtbox.Location = new System.Drawing.Point(156, 140);
+            this.idtext_txtbox.Location = new System.Drawing.Point(100, 138);
             this.idtext_txtbox.Name = "idtext_txtbox";
             this.idtext_txtbox.Size = new System.Drawing.Size(100, 21);
             this.idtext_txtbox.TabIndex = 4;
             // 
             // pwtext_txtbox
             // 
-            this.pwtext_txtbox.Location = new System.Drawing.Point(156, 213);
+            this.pwtext_txtbox.Location = new System.Drawing.Point(100, 205);
             this.pwtext_txtbox.Name = "pwtext_txtbox";
             this.pwtext_txtbox.Size = new System.Drawing.Size(100, 21);
             this.pwtext_txtbox.TabIndex = 5;
             // 
             // nametext_txtbox
             // 
-            this.nametext_txtbox.Location = new System.Drawing.Point(156, 290);
+            this.nametext_txtbox.Location = new System.Drawing.Point(100, 273);
             this.nametext_txtbox.Name = "nametext_txtbox";
             this.nametext_txtbox.Size = new System.Drawing.Size(100, 21);
             this.nametext_txtbox.TabIndex = 6;
             // 
             // cancel_btn
             // 
-            this.cancel_btn.Location = new System.Drawing.Point(85, 355);
+            this.cancel_btn.Location = new System.Drawing.Point(46, 355);
             this.cancel_btn.Name = "cancel_btn";
             this.cancel_btn.Size = new System.Drawing.Size(75, 23);
             this.cancel_btn.TabIndex = 7;
@@ -110,7 +110,7 @@
             // 
             // check_btn
             // 
-            this.check_btn.Location = new System.Drawing.Point(215, 355);
+            this.check_btn.Location = new System.Drawing.Point(180, 355);
             this.check_btn.Name = "check_btn";
             this.check_btn.Size = new System.Drawing.Size(75, 23);
             this.check_btn.TabIndex = 8;
@@ -122,7 +122,7 @@
             this.join_page_image.ErrorImage = null;
             this.join_page_image.Location = new System.Drawing.Point(0, 0);
             this.join_page_image.Name = "join_page_image";
-            this.join_page_image.Size = new System.Drawing.Size(397, 111);
+            this.join_page_image.Size = new System.Drawing.Size(300, 110);
             this.join_page_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.join_page_image.TabIndex = 9;
             this.join_page_image.TabStop = false;
@@ -131,7 +131,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(396, 447);
+            this.ClientSize = new System.Drawing.Size(299, 491);
             this.Controls.Add(this.join_page_image);
             this.Controls.Add(this.check_btn);
             this.Controls.Add(this.cancel_btn);

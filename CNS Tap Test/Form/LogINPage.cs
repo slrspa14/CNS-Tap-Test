@@ -27,5 +27,11 @@ namespace CNS_Tap_Test
                 e.Cancel = true;
             }
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DB SELECT 문 보내고
+            //IF로 구별 -> 일치시 TEXT 클리어, 화면전환, 로그인 성공 알림
+        }
     }
 }

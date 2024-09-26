@@ -23,6 +23,7 @@ namespace CNS_Tap_Test
             //버튼이 없어도 되나
             //picturebox 클릭했을 때 이벤트를 등록해서 다음 페이지로 넘어가게만 하게
             InitializeComponent();
+            CenterToScreen();
             //start_btn.FlatStyle = FlatStyle.Flat;
             //start_btn.FlatAppearance.BorderSize = 0;
             //start_btn.BackColor = Color.Transparent;
@@ -53,7 +54,7 @@ namespace CNS_Tap_Test
                 if (MessageBox.Show("종료하시겠습니까?", "종료 확인", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
                     isClosing = true;
-                    this.Close(); // 부모 폼도 함께 종료
+                    this.Close();
                 }
                 else
                 {
