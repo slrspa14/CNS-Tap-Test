@@ -12,7 +12,7 @@ namespace CNS_Tap_Test
 {
     public partial class LogINPage : Form
     {
-        //ID, PW 일치 불일치 확인
+        //ID, PW 일치 불일치 확인//폴더 수정
         //디자인
         
         public LogINPage()
